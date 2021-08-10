@@ -52,7 +52,7 @@ func leComando() int {
 
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando...")
-	site := "https://www.starpay.com.br"
+	site := "https://adrenaline.com.br/"
 	resp, _ := http.Get(site)
 
 	if resp.StatusCode == 200 {
