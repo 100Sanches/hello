@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"net/http"
 	"os"
@@ -91,12 +92,19 @@ func testaSite(site string) {
 
 func leSitesDoArquivo() []string {
 
+	var sites []string
+
 	arquivo, err := os.Open("sites.txt")
 
 	if err != nil {
 		fmt.Println("Ocorreu um erro:", err)
 	}
 
-	fmt.Println(arquivo)
+	leitor := bufio.NewReader(arquivo)
 
+	linha, err := leitor.ReadString('\n')
+
+	fmt.Println(arquivo, linha)
+
+	return sites
 }
